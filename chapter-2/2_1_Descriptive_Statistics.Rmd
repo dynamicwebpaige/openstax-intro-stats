@@ -4,13 +4,13 @@ author: "Paige Bailey"
 date: "March 27, 2017"
 ---
 
-## Descriptive Statistics
-2.1 Stem-and-Leaf Graphs (Stemplots), Line Graphs, and Bar Graphs
+## 2.1 Stem-and-Leaf Graphs (Stemplots), Line Graphs, and Bar Graphs
+One simple graph, the **stem-and-leaf graph** or **stemplot**, comes from the field of exploratory data analysis. It is a good choice when the data sets are small. To create the plot, divide each observation of data into a stem and a leaf. The leaf consists of a final **significant digit**. For example, 23 has stem two and leaf three. The number 432 has stem 43 and leaf two. Likewise, the number 5,432 has stem 543 and leaf two. The decimal 9.3 has stem nine and leaf three. Write the stems in a vertical line from smallest to largest. Draw a vertical line to the right of the stems. Then write the leaves in increasing order next to their corresponding stem.
 
-## Try It: Problem 1
+**Try It: Problem 1**
 For the Park City basketball team, scores for the last 30 games were as follows (smallest to largest): 
 
-32; 32; 33; 34; 38; 40; 42; 42; 43; 44; 46; 47; 47; 48; 48; 48; 49; 50; 50; 51; 52; 52; 52; 53; 54; 56; 57; 57; 60; 61 
+32; 32; 33; 34; 38; 40; 42; 42; 43; 44; 46; 47; 47; 48; 48; 48; 49; 50; 50; 51; 52; 52; 52; 53; 54; 56; 57; 57; 60; and 61.
 
 Construct a stem plot for the data.
 
