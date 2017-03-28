@@ -224,3 +224,65 @@ park_city %>%
         title = "Park City Residents")
 
 ```
+
+----
+
+####Try It: Bar Graph #3
+
+The columns in the table below contain: the race or ethnicity of students in U.S. Public Schools for the class of 2011, percentages for the Advanced Placement examine population for that class, and percentages for the overall student population. Create a bar graph with the student race or ethnicity (qualitative data) on the x-axis, and the Advanced Placement examinee population percentages on the y-axis.
+
+```{r }
+
+ethnicity <- c("1 = Asian, Asian American or Pacific Islander", 
+               "2 = Black or African American", 
+               "3 = Hispanic or Latino", 
+               "4 = American Indian or Alaska Native", 
+               "5 = White", 
+               "6 = Not reported/other")
+
+ap_examinee <- c(10.3, 9.0, 17.0, 0.6, 57.1, 6.0)
+overall_pop <- c(5.7, 14.7, 17.6, 1.1, 59.2, 1.7)
+
+kable(as.data.frame(cbind("Race/Ethnicity" = ethnicity, 
+                          "AP Examinee Population" = paste(as.character(ap_examinee), "%"),
+                          "Overall Student Population" = paste(as.character(overall_pop), "%"))))
+
+AP_ethnicity <- as.data.frame(cbind(ethnicity, ap_examinee, overall_pop))
+
+AP_ethnicity %>%
+  ggplot(aes(x = ethnicity, y = ap_examinee)) + 
+  geom_bar(stat = "identity") +
+  labs( x = "Race / Ethnicity",
+        y = "Percent of AP examinees",
+        title = "AP Examinees in Public School by Ethnicity") +
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))
+
+
+```
+
+----
+
+####Try It: Bar Graph #4
+
+Park city is broken down into six voting districts. The table shows the percent of the total registered voter population that lives in each district as well as the percent total of the entire population that lives in each district. Construct a bar graph that shows the registered voter population by district.
+
+```{r }
+
+district <- c(1:6)
+registered_voters <- c(15.5, 12.2, 9.8, 17.4, 22.8, 22.3)
+overall_pop <- c(19.4, 15.6, 9.0, 18.5, 20.7, 16.8)
+
+kable(as.data.frame(cbind("District" = district, 
+                          "Registered voter population" = paste(as.character(registered_voters), "%"),
+                          "Overall city population" = paste(as.character(overall_pop), "%"))))
+
+park_city_votes <- as.data.frame(cbind(district, registered_voters, overall_pop))
+
+park_city_votes %>%
+  ggplot(aes(x = as.character(district), y = registered_voters)) + 
+  geom_bar(stat = "identity") +
+  labs( x = "District",
+        y = "Voter proportion (%)",
+        title = "Registered Voter Proportion by District - Park City")
+
+```
