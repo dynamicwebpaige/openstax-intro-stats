@@ -28,3 +28,23 @@ scores <- c(32, 32, 33, 34, 38, 40,
 stem(scores)
 ```
 
+**Try It: Problem 2**
+
+The data are the distances (in kilometers) from a home to local supermarkets. Create a stemplot using the data: 
+
+1.1; 1.5; 2.3; 2.5; 2.7; 
+3.2; 3.3; 3.3; 3.5; 3.8; 
+4.0; 4.2; 4.5; 4.5; 4.7; 
+4.8; 5.5; 5.6; 6.5; 6.7; 12.3
+
+Do the data seem to have any concentration of values?
+
+## Stem-and-Leaf Plot
+```{r }
+scores <- c(1.1, 1.5, 2.3, 2.5, 2.7, 
+            3.2, 3.3, 3.3, 3.5, 3.8, 
+            4.0, 4.2, 4.5, 4.5, 4.7, 
+            4.8, 5.5, 5.6, 6.5, 6.7, 12.3)
+
+stem(scores)
+```
