@@ -122,11 +122,11 @@ death_age <- c(67, 90, 83, 85, 73, 80, 78, 79, 68,
                67, 57, 60, 90, 63, 88, 78, 46, 64, 
                81, 93, NA, 93, NA, NA, NA, NA)
 
-kable(as.data.frame(cbind(presidents,inauguration_age), 
-                    caption = "Age at Inauguration"))
+kable(as.data.frame(cbind("President" = presidents,
+                          "Age" = inauguration_age)))
 
-kable(as.data.frame(cbind(presidents,death_age), 
-                    caption = "Age at Death"))
+kable(as.data.frame(cbind("President" = presidents,
+                          "Age" = death_age)))
 
 ```
 
@@ -153,6 +153,9 @@ In a survey, 40 people were asked how many times per year they had their car in 
 times_in_shop <- c(0, 1, 2, 3)
 frequencies <- c(7, 10, 14, 9)
 
+kable(as.data.frame(cbind("Number of times in shop" = times_in_shop,
+                          "Frequency" = frequencies)))
+                    
 line_plot_1 <- as.data.frame(cbind(times_in_shop, frequencies))
 
 line_plot_1 %>%
@@ -170,7 +173,7 @@ line_plot_1 %>%
 
 ----
 
-####Try It: Bar Graph
+####Try It: Bar Graph #1
 
 By the end of 2011, Facebook had over 146 million users in the United States. The table below shows three age groups, the number of users in each age group, and the proportion (%) of users in each age group. Construct a bar graph using this data.
 
@@ -179,6 +182,10 @@ By the end of 2011, Facebook had over 146 million users in the United States. Th
 age_groups <- c("13 - 25", "26 - 44", "45 - 64")
 number_of_FB_users <- c(65082280, 53300200, 27885100)
 proportion_FB_users <- c(45, 36, 19)
+
+kable(as.data.frame(cbind("Age groups" = age_groups, 
+                          "Number of Facebook users" = number_of_FB_users,
+                          "Proportion (%) of Facebook users" = paste(as.character(proportion_FB_users), "%"))))
 
 FB_users <- as.data.frame(cbind(age_groups, number_of_FB_users, proportion_FB_users))
 
@@ -191,3 +198,29 @@ FB_users %>%
 
 ```
 
+----
+
+####Try It: Bar Graph #2
+
+The population in Park City is made up of children, working-age adults, and retirees. The table below shows the three age groups, the number of people in the town from each age group, and the proportion (%) of people in each age group. Construct a bar graph showing the proportions.
+
+```{r }
+
+age_groups <- c("Children", "Working-age adults", "Retirees")
+number_of_people <- c(67059, 152198, 131662)
+proportion_of_pop <- c(19, 43, 38)
+
+kable(as.data.frame(cbind("Age groups" = age_groups, 
+                          "Number of people" = number_of_people,
+                          "Proportion of population" = paste(as.character(proportion_of_pop), "%"))))
+
+park_city <- as.data.frame(cbind(age_groups, number_of_people, proportion_of_pop))
+
+park_city %>%
+  ggplot(aes(x = age_groups, y = proportion_of_pop)) + 
+  geom_bar(stat = "identity") +
+  labs( x = "Age group",
+        y = "Proportion (%)",
+        title = "Park City Residents")
+
+```
