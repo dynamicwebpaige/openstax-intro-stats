@@ -28,6 +28,7 @@ scores <- c(32, 32, 33, 34, 38, 40,
 stem(scores)
 ```
 
+
 **Try It: Problem 2**
 
 The data are the distances (in kilometers) from a home to local supermarkets. Create a stemplot using the data: 
@@ -46,5 +47,33 @@ scores <- c(1.1, 1.5, 2.3, 2.5, 2.7,
             4.0, 4.2, 4.5, 4.5, 4.7, 
             4.8, 5.5, 5.6, 6.5, 6.7, 12.3)
 
-stem(scores)
+stem(scores, scale = 2)
 ```
+
+Based on the data in the stemplot, the value **12.3** may be an outlier. Values appear to concentrate at three and four kilometers.
+
+
+**Try It: Problem 3**
+
+The following data show the distances (in miles) from the homes of off-campus statistics students to the college. Create a stem plot using the data and identify any outliers:
+
+0.5; 0.7; 1.1; 1.2; 1.2; 
+1.3; 1.3; 1.5; 1.5; 1.7; 
+1.7; 1.8; 1.9; 2.0; 2.2; 
+2.5; 2.6; 2.8; 2.8; 2.8; 
+3.5; 3.8; 4.4; 4.8; 4.9; 
+5.2; 5.5; 5.7; 5.8; 8.0
+
+## Stem-and-Leaf Plot
+```{r }
+scores <- c(0.5, 0.7, 1.1, 1.2, 1.2, 
+            1.3, 1.3, 1.5, 1.5, 1.7, 
+            1.7, 1.8, 1.9, 2.0, 2.2, 
+            2.5, 2.6, 2.8, 2.8, 2.8, 
+            3.5, 3.8, 4.4, 4.8, 4.9, 
+            5.2, 5.5, 5.7, 5.8, 8.0)
+
+stem(scores, scale = 2)
+```
+
+The value **8.0** may be an outlier. Values appear to concentrate at one and two miles.
