@@ -2,9 +2,13 @@
 title: 'Chapter 2: Descriptive Statistics'
 ---
 
-```{r }
+```{r echo = FALSE, results = 'asis', message = FALSE}
 # Load libraries
 library(aplpack)
+library(dplyr)
+library(ggvis)
+library(tcltk)
+library(ggplot2)
 library(knitr)
 
 ```
@@ -105,11 +109,57 @@ kable(as.data.frame(cbind(presidents,death_age), caption = "Age at Death"))
 
 ```
 
-To create the side-by-side stemplot, we use the function `stem.leaf.backback` from the `aplpack` library.
+To create the side-by-side stemplot, we use the function `stem.leaf.backback` from the `aplpack` library. The two variables `n` and `NA` toward the bottom of the stemplot denote the number of numeric and `NA` values in each vector.
 
 ```{r }
 
 stem.leaf.backback(inauguration_age, death_age)
+
+```
+
+Another type of graph that is useful for specific data values is a **line graph**. In the particular line graph shown in Example, the **x-axis** (horizontal axis) consists of **data values** and the **y-axis** (vertical axis) consists of **frequency points**. The frequency points are connected using line segments.
+
+**Try It: Problem 5**
+
+In a survey, 40 people were asked how many times per year they had their car in the shop for repairs. The results are shown in the table below. Construct a line graph using the data visualization library `ggplot2`.
+
+```{r }
+
+times_in_shop <- c(0, 1, 2, 3)
+frequencies <- c(7, 10, 14, 9)
+
+line_plot_1 <- as.data.frame(cbind(times_in_shop, frequencies))
+
+line_plot_1 %>%
+  ggplot(aes(x = times_in_shop, y = frequencies)) + 
+  geom_line() +
+  labs( x = "Number of times in shop",
+        y = "Frequency",
+        title = "Car Repairs: A Survey, n = 40")
+
+```
+
+**Bar graphs** consist of bars that are separated from each other. The bars can be rectangles or they can be rectangular boxes (used in three-dimensional plots), and they can be vertical or horizontal. The **bar graph** shown in Example has age groups represented on the **x-axis** and proportions on the **y-axis**.
+
+
+**Try It: Problem 6**
+
+By the end of 2011, Facebook had over 146 million users in the United States. The table below shows three age groups, the number of users in each age group, and the proportion (%) of users in each age group. Construct a bar graph using this data.
+
+```{r }
+
+age_groups <- c("13 - 25", "26 - 44", "45 - 64")
+number_of_FB_users <- c(65082280, 53300200, 27885100)
+proportion_FB_users <- c(45, 36, 19)
+
+FB_users <- as.data.frame(cbind(age_groups, number_of_FB_users, proportion_FB_users))
+
+FB_users %>%
+  ggplot(aes(x = age_groups, y = proportion_FB_users)) + 
+  geom_bar(stat = "identity") +
+  labs( x = "Ages",
+        y = "Proportion (%)",
+        title = "Facebook Users in 2011")
 
 ```
 
