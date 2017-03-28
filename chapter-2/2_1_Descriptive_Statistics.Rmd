@@ -1,0 +1,23 @@
+---
+title: "2_1_Descriptive_Statistics"
+author: "Paige Bailey"
+date: "March 27, 2017"
+---
+
+## Descriptive Statistics
+2.1 Stem-and-Leaf Graphs (Stemplots), Line Graphs, and Bar Graphs
+
+## Try It
+For the Park City basketball team, scores for the last 30 games were as follows (smallest to largest): 
+
+32; 32; 33; 34; 38; 40; 42; 42; 43; 44; 46; 47; 47; 48; 48; 48; 49; 50; 50; 51; 52; 52; 52; 53; 54; 56; 57; 57; 60; 61 
+
+Construct a stem plot for the data.
+
+## Apply the stem function to compute the stem-and-leaf plot of basket ball team scores.
+```{r }
+scores <- c(32, 32, 33, 34, 38, 40, 42, 42, 43, 44, 46, 47, 47, 48, 48, 48, 49, 50, 50, 51, 52, 52, 52, 53, 54, 56, 57, 57, 60, 61)
+
+stem(scores)
+```
+
