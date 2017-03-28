@@ -5,7 +5,7 @@ This repository will detail R code solutions for the 2017 edition of [OpenStax](
 # Table of Contents
 1. **Sampling and Data**
 2. **Descriptive Statistics**
-  * Stem-and-Leaf Graphs (Stemplots), Line Graphs, and Bar Graphs 
+* [Stem-and-Leaf Graphs (Stemplots), Line Graphs, and Bar Graphs](http://paigevie.ws/2_1_Descriptive_Statistics.html)
 * Histograms, Frequency Polygons, and Time Series Graphs 
 * Measures of the Location of the Data
 * Box Plots
