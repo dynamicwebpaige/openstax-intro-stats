@@ -1,0 +1,3 @@
+---
+title: "Chapter 8: Confidence Intervals"
+---

@@ -1,0 +1,3 @@
+---
+title: "Chapter 7: The Central Limit Theorem"
+---

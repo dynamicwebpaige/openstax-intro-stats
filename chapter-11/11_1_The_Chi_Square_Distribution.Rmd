@@ -1,0 +1,3 @@
+---
+title: "Chapter 11: The Chi-Square Distribution"
+---
