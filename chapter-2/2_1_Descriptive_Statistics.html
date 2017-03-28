@@ -120,6 +120,10 @@ $(document).ready(function () {
 </div>
 
 
+<pre class="r"><code># Load libraries
+library(aplpack)</code></pre>
+<pre><code>## Loading required package: tcltk</code></pre>
+<pre class="r"><code>library(knitr)</code></pre>
 <div id="stem-and-leaf-graphs-line-graphs-and-bar-graphs" class="section level2">
 <h2>2.1 Stem-and-Leaf Graphs, Line Graphs, and Bar Graphs</h2>
 <p>One simple graph, the <strong>stem-and-leaf graph</strong> or <strong>stemplot</strong>, comes from the field of exploratory data analysis. It is a good choice when the data sets are small. To create the plot, divide each observation of data into a stem and a leaf. The leaf consists of a final <strong>significant digit</strong>. For example, 23 has stem two and leaf three. The number 432 has stem 43 and leaf two. Likewise, the number 5,432 has stem 543 and leaf two. The decimal 9.3 has stem nine and leaf three. Write the stems in a vertical line from smallest to largest. Draw a vertical line to the right of the stems. Then write the leaves in increasing order next to their corresponding stem.</p>
@@ -205,6 +209,412 @@ stem(scores, scale = 2)</code></pre>
 ##   7 | 
 ##   8 | 0</code></pre>
 <p>The value <strong>8.0</strong> may be an outlier. Values appear to concentrate at one and two miles.</p>
+<p><strong>Try It: Problem 4</strong></p>
+<p>A <strong>side-by-side stem-and-leaf plot</strong> allows a comparison of the two data sets in two columns. In a side-by-side stem-and-leaf plot, two sets of leaves share the same stem. The leaves are to the left and the right of the stems. The two tables below show the ages of presidents at their inauguration and at their death. Construct a side-by-side stem-and-leaf plot using this data.</p>
+</div>
+<div id="presidential-ages" class="section level2">
+<h2>Presidential Ages</h2>
+<pre class="r"><code>presidents &lt;- c(&quot;Washington&quot;, &quot;J. Adams&quot;, &quot;Jefferson&quot;, &quot;Madison&quot;, &quot;Monroe&quot;, &quot;J.Q. Adams&quot;, &quot;Jackson&quot;, &quot;Van Buren&quot;, &quot;W. H. Harrison&quot;, &quot;Tyler&quot;, &quot;Polk&quot;, &quot;Taylor&quot;, &quot;Fillmore&quot;, &quot;Pierce&quot;, &quot;Buchanan&quot;, &quot;Lincoln&quot;, &quot;A. Johnson&quot;, &quot;Grant&quot;, &quot;Hayes&quot;, &quot;Garfield&quot;, &quot;Arthur&quot;, &quot;Cleveland&quot;, &quot;B. Harrison&quot;, &quot;Cleveland&quot;, &quot;McKinley&quot;, &quot;T. Roosevelt&quot;, &quot;Taft&quot;, &quot;Wilson&quot;, &quot;Harding&quot;, &quot;Coolidge&quot;, &quot;Hoover&quot;, &quot;F. Roosevelt&quot;, &quot;Truman&quot;, &quot;Eisenhower&quot;, &quot;Kennedy&quot;, &quot;L. Johnson&quot;, &quot;Nixon&quot;, &quot;Ford&quot;, &quot;Carter&quot;, &quot;Reagan&quot;, &quot;G.H.W. Bush&quot;, &quot;Clinton&quot;, &quot;G. W. Bush&quot;, &quot;Obama&quot;)
+
+inauguration_age &lt;- c(57, 61, 57, 57, 58, 57, 61, 54, 68, 51, 49, 64, 50, 48, 65, 52, 56, 46, 54, 49, 51, 47, 55, 55, 54, 42, 51, 56, 55, 51, 54, 51, 60, 62, 43, 55, 56, 61, 52, 69, 64, 47, 54, 47)
+
+death_age &lt;- c(67, 90, 83, 85, 73, 80, 78, 79, 68, 71, 53, 65, 74, 64, 77, 56, 66, 63, 70, 49, 56, 71, 67, 71, 58, 60, 72, 67, 57, 60, 90, 63, 88, 78, 46, 64, 81, 93, NA, 93, NA, NA, NA, NA)
+
+kable(as.data.frame(cbind(presidents,inauguration_age), caption = &quot;Age at Inauguration&quot;))</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">presidents</th>
+<th align="left">inauguration_age</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Washington</td>
+<td align="left">57</td>
+</tr>
+<tr class="even">
+<td align="left">J. Adams</td>
+<td align="left">61</td>
+</tr>
+<tr class="odd">
+<td align="left">Jefferson</td>
+<td align="left">57</td>
+</tr>
+<tr class="even">
+<td align="left">Madison</td>
+<td align="left">57</td>
+</tr>
+<tr class="odd">
+<td align="left">Monroe</td>
+<td align="left">58</td>
+</tr>
+<tr class="even">
+<td align="left">J.Q. Adams</td>
+<td align="left">57</td>
+</tr>
+<tr class="odd">
+<td align="left">Jackson</td>
+<td align="left">61</td>
+</tr>
+<tr class="even">
+<td align="left">Van Buren</td>
+<td align="left">54</td>
+</tr>
+<tr class="odd">
+<td align="left">W. H. Harrison</td>
+<td align="left">68</td>
+</tr>
+<tr class="even">
+<td align="left">Tyler</td>
+<td align="left">51</td>
+</tr>
+<tr class="odd">
+<td align="left">Polk</td>
+<td align="left">49</td>
+</tr>
+<tr class="even">
+<td align="left">Taylor</td>
+<td align="left">64</td>
+</tr>
+<tr class="odd">
+<td align="left">Fillmore</td>
+<td align="left">50</td>
+</tr>
+<tr class="even">
+<td align="left">Pierce</td>
+<td align="left">48</td>
+</tr>
+<tr class="odd">
+<td align="left">Buchanan</td>
+<td align="left">65</td>
+</tr>
+<tr class="even">
+<td align="left">Lincoln</td>
+<td align="left">52</td>
+</tr>
+<tr class="odd">
+<td align="left">A. Johnson</td>
+<td align="left">56</td>
+</tr>
+<tr class="even">
+<td align="left">Grant</td>
+<td align="left">46</td>
+</tr>
+<tr class="odd">
+<td align="left">Hayes</td>
+<td align="left">54</td>
+</tr>
+<tr class="even">
+<td align="left">Garfield</td>
+<td align="left">49</td>
+</tr>
+<tr class="odd">
+<td align="left">Arthur</td>
+<td align="left">51</td>
+</tr>
+<tr class="even">
+<td align="left">Cleveland</td>
+<td align="left">47</td>
+</tr>
+<tr class="odd">
+<td align="left">B. Harrison</td>
+<td align="left">55</td>
+</tr>
+<tr class="even">
+<td align="left">Cleveland</td>
+<td align="left">55</td>
+</tr>
+<tr class="odd">
+<td align="left">McKinley</td>
+<td align="left">54</td>
+</tr>
+<tr class="even">
+<td align="left">T. Roosevelt</td>
+<td align="left">42</td>
+</tr>
+<tr class="odd">
+<td align="left">Taft</td>
+<td align="left">51</td>
+</tr>
+<tr class="even">
+<td align="left">Wilson</td>
+<td align="left">56</td>
+</tr>
+<tr class="odd">
+<td align="left">Harding</td>
+<td align="left">55</td>
+</tr>
+<tr class="even">
+<td align="left">Coolidge</td>
+<td align="left">51</td>
+</tr>
+<tr class="odd">
+<td align="left">Hoover</td>
+<td align="left">54</td>
+</tr>
+<tr class="even">
+<td align="left">F. Roosevelt</td>
+<td align="left">51</td>
+</tr>
+<tr class="odd">
+<td align="left">Truman</td>
+<td align="left">60</td>
+</tr>
+<tr class="even">
+<td align="left">Eisenhower</td>
+<td align="left">62</td>
+</tr>
+<tr class="odd">
+<td align="left">Kennedy</td>
+<td align="left">43</td>
+</tr>
+<tr class="even">
+<td align="left">L. Johnson</td>
+<td align="left">55</td>
+</tr>
+<tr class="odd">
+<td align="left">Nixon</td>
+<td align="left">56</td>
+</tr>
+<tr class="even">
+<td align="left">Ford</td>
+<td align="left">61</td>
+</tr>
+<tr class="odd">
+<td align="left">Carter</td>
+<td align="left">52</td>
+</tr>
+<tr class="even">
+<td align="left">Reagan</td>
+<td align="left">69</td>
+</tr>
+<tr class="odd">
+<td align="left">G.H.W. Bush</td>
+<td align="left">64</td>
+</tr>
+<tr class="even">
+<td align="left">Clinton</td>
+<td align="left">47</td>
+</tr>
+<tr class="odd">
+<td align="left">G. W. Bush</td>
+<td align="left">54</td>
+</tr>
+<tr class="even">
+<td align="left">Obama</td>
+<td align="left">47</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>kable(as.data.frame(cbind(presidents,death_age), caption = &quot;Age at Death&quot;))</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">presidents</th>
+<th align="left">death_age</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Washington</td>
+<td align="left">67</td>
+</tr>
+<tr class="even">
+<td align="left">J. Adams</td>
+<td align="left">90</td>
+</tr>
+<tr class="odd">
+<td align="left">Jefferson</td>
+<td align="left">83</td>
+</tr>
+<tr class="even">
+<td align="left">Madison</td>
+<td align="left">85</td>
+</tr>
+<tr class="odd">
+<td align="left">Monroe</td>
+<td align="left">73</td>
+</tr>
+<tr class="even">
+<td align="left">J.Q. Adams</td>
+<td align="left">80</td>
+</tr>
+<tr class="odd">
+<td align="left">Jackson</td>
+<td align="left">78</td>
+</tr>
+<tr class="even">
+<td align="left">Van Buren</td>
+<td align="left">79</td>
+</tr>
+<tr class="odd">
+<td align="left">W. H. Harrison</td>
+<td align="left">68</td>
+</tr>
+<tr class="even">
+<td align="left">Tyler</td>
+<td align="left">71</td>
+</tr>
+<tr class="odd">
+<td align="left">Polk</td>
+<td align="left">53</td>
+</tr>
+<tr class="even">
+<td align="left">Taylor</td>
+<td align="left">65</td>
+</tr>
+<tr class="odd">
+<td align="left">Fillmore</td>
+<td align="left">74</td>
+</tr>
+<tr class="even">
+<td align="left">Pierce</td>
+<td align="left">64</td>
+</tr>
+<tr class="odd">
+<td align="left">Buchanan</td>
+<td align="left">77</td>
+</tr>
+<tr class="even">
+<td align="left">Lincoln</td>
+<td align="left">56</td>
+</tr>
+<tr class="odd">
+<td align="left">A. Johnson</td>
+<td align="left">66</td>
+</tr>
+<tr class="even">
+<td align="left">Grant</td>
+<td align="left">63</td>
+</tr>
+<tr class="odd">
+<td align="left">Hayes</td>
+<td align="left">70</td>
+</tr>
+<tr class="even">
+<td align="left">Garfield</td>
+<td align="left">49</td>
+</tr>
+<tr class="odd">
+<td align="left">Arthur</td>
+<td align="left">56</td>
+</tr>
+<tr class="even">
+<td align="left">Cleveland</td>
+<td align="left">71</td>
+</tr>
+<tr class="odd">
+<td align="left">B. Harrison</td>
+<td align="left">67</td>
+</tr>
+<tr class="even">
+<td align="left">Cleveland</td>
+<td align="left">71</td>
+</tr>
+<tr class="odd">
+<td align="left">McKinley</td>
+<td align="left">58</td>
+</tr>
+<tr class="even">
+<td align="left">T. Roosevelt</td>
+<td align="left">60</td>
+</tr>
+<tr class="odd">
+<td align="left">Taft</td>
+<td align="left">72</td>
+</tr>
+<tr class="even">
+<td align="left">Wilson</td>
+<td align="left">67</td>
+</tr>
+<tr class="odd">
+<td align="left">Harding</td>
+<td align="left">57</td>
+</tr>
+<tr class="even">
+<td align="left">Coolidge</td>
+<td align="left">60</td>
+</tr>
+<tr class="odd">
+<td align="left">Hoover</td>
+<td align="left">90</td>
+</tr>
+<tr class="even">
+<td align="left">F. Roosevelt</td>
+<td align="left">63</td>
+</tr>
+<tr class="odd">
+<td align="left">Truman</td>
+<td align="left">88</td>
+</tr>
+<tr class="even">
+<td align="left">Eisenhower</td>
+<td align="left">78</td>
+</tr>
+<tr class="odd">
+<td align="left">Kennedy</td>
+<td align="left">46</td>
+</tr>
+<tr class="even">
+<td align="left">L. Johnson</td>
+<td align="left">64</td>
+</tr>
+<tr class="odd">
+<td align="left">Nixon</td>
+<td align="left">81</td>
+</tr>
+<tr class="even">
+<td align="left">Ford</td>
+<td align="left">93</td>
+</tr>
+<tr class="odd">
+<td align="left">Carter</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Reagan</td>
+<td align="left">93</td>
+</tr>
+<tr class="odd">
+<td align="left">G.H.W. Bush</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Clinton</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">G. W. Bush</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Obama</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+<p>To create the side-by-side stemplot, we use the function <code>stem.leaf.backback</code> from the <code>aplpack</code> library.</p>
+<pre class="r"><code>stem.leaf.backback(inauguration_age, death_age)</code></pre>
+<pre><code>## _______________________________________________
+##   1 | 2: represents 12, leaf unit: 1 
+##      inauguration_age      death_age        
+## _______________________________________________
+##     2              32| 4* |                    
+##     9         9987776| 4. |69              2   
+##    22   4444422111110| 5* |3               3   
+##   (12)   877776665555| 5. |6678            7   
+##    10         4421110| 6* |003344         13   
+##     3             985| 6. |567778         19   
+##                      | 7* |0111234        (7)  
+##                      | 7. |7889           13   
+##                      | 8* |013             9   
+##                      | 8. |58              6   
+##                      | 9* |0033            4   
+## _______________________________________________
+## n:                 44      44               
+## NAs:                0      5                
+## _______________________________________________</code></pre>
 </div>
 
 

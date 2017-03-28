@@ -2,6 +2,13 @@
 title: 'Chapter 2: Descriptive Statistics'
 ---
 
+```{r }
+# Load libraries
+library(aplpack)
+library(knitr)
+
+```
+
 ## 2.1 Stem-and-Leaf Graphs, Line Graphs, and Bar Graphs
 One simple graph, the **stem-and-leaf graph** or **stemplot**, comes from the field of exploratory data analysis. It is a good choice when the data sets are small. To create the plot, divide each observation of data into a stem and a leaf. The leaf consists of a final **significant digit**. For example, 23 has stem two and leaf three. The number 432 has stem 43 and leaf two. Likewise, the number 5,432 has stem 543 and leaf two. The decimal 9.3 has stem nine and leaf three. Write the stems in a vertical line from smallest to largest. Draw a vertical line to the right of the stems. Then write the leaves in increasing order next to their corresponding stem.
 
@@ -77,3 +84,32 @@ stem(scores, scale = 2)
 ```
 
 The value **8.0** may be an outlier. Values appear to concentrate at one and two miles.
+
+
+**Try It: Problem 4**
+
+A **side-by-side stem-and-leaf plot** allows a comparison of the two data sets in two columns. In a side-by-side stem-and-leaf plot, two sets of leaves share the same stem. The leaves are to the left and the right of the stems. The two tables below show the ages of presidents at their inauguration and at their death. Construct a side-by-side stem-and-leaf plot using this data.
+
+## Presidential Ages
+```{r}
+
+presidents <- c("Washington", "J. Adams", "Jefferson", "Madison", "Monroe", "J.Q. Adams", "Jackson", "Van Buren", "W. H. Harrison", "Tyler", "Polk", "Taylor", "Fillmore", "Pierce", "Buchanan", "Lincoln", "A. Johnson", "Grant", "Hayes", "Garfield", "Arthur", "Cleveland", "B. Harrison", "Cleveland", "McKinley", "T. Roosevelt", "Taft", "Wilson", "Harding", "Coolidge", "Hoover", "F. Roosevelt", "Truman", "Eisenhower", "Kennedy", "L. Johnson", "Nixon", "Ford", "Carter", "Reagan", "G.H.W. Bush", "Clinton", "G. W. Bush", "Obama")
+
+inauguration_age <- c(57, 61, 57, 57, 58, 57, 61, 54, 68, 51, 49, 64, 50, 48, 65, 52, 56, 46, 54, 49, 51, 47, 55, 55, 54, 42, 51, 56, 55, 51, 54, 51, 60, 62, 43, 55, 56, 61, 52, 69, 64, 47, 54, 47)
+
+death_age <- c(67, 90, 83, 85, 73, 80, 78, 79, 68, 71, 53, 65, 74, 64, 77, 56, 66, 63, 70, 49, 56, 71, 67, 71, 58, 60, 72, 67, 57, 60, 90, 63, 88, 78, 46, 64, 81, 93, NA, 93, NA, NA, NA, NA)
+
+kable(as.data.frame(cbind(presidents,inauguration_age), caption = "Age at Inauguration"))
+
+kable(as.data.frame(cbind(presidents,death_age), caption = "Age at Death"))
+
+```
+
+To create the side-by-side stemplot, we use the function `stem.leaf.backback` from the `aplpack` library.
+
+```{r }
+
+stem.leaf.backback(inauguration_age, death_age)
+
+```
+
