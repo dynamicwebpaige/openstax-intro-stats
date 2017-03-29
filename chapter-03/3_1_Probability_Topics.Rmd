@@ -1,3 +1,206 @@
 ---
-title: "Chapter 3: Probability Topics"
+title: 'Chapter 3: Probability Topics'
 ---
+
+```{r echo = FALSE, results = 'asis', message = FALSE}
+# Load libraries
+library(aplpack)
+library(dplyr)
+library(tcltk)
+library(ggplot2)
+library(knitr)
+library(tibble)
+
+```
+
+## Terminology
+
+Probability is a measure that is associated with how certain we are of outcomes of a particular experiment or activity. An **experiment** is a planned operation carried out under controlled conditions. If the result is not predetermined, then the experiment is said to be a **chance** experiment. Flipping one fair coin twice is an example of an experiment.
+
+A result of an experiment is called an **outcome**. The **sample space** of an experiment is the set of all possible outcomes. Three ways to represent a sample space are: to list the possible outcomes, to create a tree diagram, or to create a Venn diagram. The uppercase letter S is used to denote the sample space. For example, if you flip one fair coin, S = {H, T} where H = heads and T = tails are the outcomes.
+
+An **event** is any combination of outcomes. Upper case letters like A and B represent events. For example, if the experiment is to flip one fair coin, event A might be getting at most one head. The probability of an event A is written P(A).
+
+
+-----
+
+####Understanding Terminology and Symbols
+
+It is important to read each problem carefully to think about and understand what the events are. Understanding the wording is the first very important step in solving probability problems. Reread the problem several times if necessary. Clearly identify the event of interest. Determine whether there is a condition stated in the wording that would indicate that the probability is conditional; carefully identify the condition, if any.
+
+-----
+
+The sample space S is the whole numbers starting at one and less than 20.
+
+1. S = _____________________________ 
+
+```{r} 
+S <- c(1:19) 
+```
+```{r, echo = FALSE} 
+S 
+```
+
+2. Let event A = the even numbers and event B = numbers greater than 13.
+
+```{r}
+
+A <- S[S %% 2 == 0]
+B <- S[S > 13]
+
+```
+
+3. A = _____________________, B = _____________________
+
+```{r, echo = FALSE}
+
+A
+B
+
+```
+
+4. P(A) = _____________, P(B) = ________________
+
+```{r}
+
+prob_a <- length(A) / length(S)
+prob_b <- length(B) / length(S)
+
+```
+```{r, echo = FALSE}
+
+prob_a
+prob_b
+
+```
+
+5. A AND B = ____________________, A OR B = ________________
+
+```{r}
+
+a_and_b <- A[A %in% B]
+a_or_b  <- c(A, B)
+
+```
+```{r, echo = FALSE}
+
+a_and_b
+a_or_b
+
+```
+
+6. P(A AND B) = _________, P(A OR B) = _____________
+
+```{r}
+
+prob_a_and_b <- length(a_and_b) / length(S)
+prob_a_or_b  <- length(a_or_b) / length(S)
+
+```
+```{r, echo = FALSE}
+
+prob_a_and_b
+prob_a_or_b
+
+```
+
+7. A' = _____________, P(A') = _____________
+
+```{r}
+
+a_prime <- S[!(S %in% A)]
+prob_a_prime <- length(a_prime) / length(S)
+
+```
+```{r, echo = FALSE}
+
+a_prime
+prob_a_prime
+
+```
+
+8. P(A) + P(A') = ____________
+
+```{r}
+
+prob_a_a_prime <- prob_a + prob_a_prime
+
+```
+```{r, echo = FALSE}
+
+prob_a_a_prime
+
+```
+
+9. P(A|B) = ___________, P(B|A) = _____________. 
+
+```{r}
+
+a_given_b <- length(a_and_b) / length(B)
+b_given_a <- length(a_and_b) / length(A)
+```
+
+```{r, echo = FALSE}
+
+a_given_b
+b_given_a
+
+```
+
+Are the probabilities equal?
+
+```{r}
+a_given_b == b_given_a
+
+```
+
+------
+
+####Try It: Problem #1
+
+The sample space S is the ordered pairs of two whole numbers, the first from one to three and the second from one to four (_Example_: (1, 4)).
+
+1. S = _____________________________ 
+
+```{r} 
+S <- data.frame(expand.grid(1:4, 1:4))
+```
+```{r, echo = FALSE} 
+S 
+```
+
+2. Let event A = the sum is even and event B = the first number is prime.
+
+```{r}
+
+A <- data.frame(S[apply(S,1,sum) %% 2 == 0,])
+B <- data.frame(S[S[1:16,1] %in% c(1,2,3),])
+
+```
+
+3. A = _____________________, B = _____________________
+
+```{r, echo = FALSE}
+
+A
+B
+
+```
+
+4. P(A) = _____________, P(B) = ________________
+
+```{r}
+
+prob_a <- nrow(A) / nrow(S)
+prob_b <- nrow(B) / nrow(S)
+
+```
+```{r, echo = FALSE}
+
+prob_a
+prob_b
+
+```
+
+-----
+
