@@ -1,0 +1,42 @@
+---
+title: 'Chapter 2: Descriptive Statistics'
+---
+
+```{r echo = FALSE, results = 'asis', message = FALSE}
+# Load libraries
+library(aplpack)
+library(dplyr)
+library(tcltk)
+library(ggplot2)
+library(knitr)
+
+```
+
+## 2.4 Box Plots
+
+**Box plots** (also called **box-and-whisker plots** or **box-whisker plots**) give a good graphical image of the concentration of the data. They also show how far the extreme values are from most of the data. A box plot is constructed from five values: the minimum value, the first quartile, the median, the third quartile, and the maximum value. We use these values to compare how close other data values are to them.
+
+To construct a box plot, use a horizontal or vertical number line and a rectangular box. The smallest and largest data values label the endpoints of the axis. The first quartile marks one end of the box and the third quartile marks the other end of the box. Approximately **the middle 50 percent of the data fall inside the box**. The "whiskers" extend from the ends of the box to the smallest and largest data values. The median or second quartile can be between the first and third quartiles, or it can be one, or the other, or both. The box plot gives a good, quick picture of the data.
+
+----
+
+####Try It: Box Plot #1
+
+The following data are the number of pages in 40 books on a shelf. Construct a box plot and state the interquartile range using R.
+
+136 140 178 190 205 215 217 218 
+232 234 240 255 270 275 290 301 
+303 315 317 318 326 333 343 349 
+360 369 377 388 391 392 398 400 
+402 405 408 422 429 450 475 512 
+
+```{r }
+pages <-  c(136, 140, 178, 190, 205, 215, 217, 218, 
+            232, 234, 240, 255, 270, 275, 290, 301, 
+            303, 315, 317, 318, 326, 333, 343, 349, 
+            360, 369, 377, 388, 391, 392, 398, 400, 
+            402, 405, 408, 422, 429, 450, 475, 512)
+
+boxplot(pages)
+IQR(pages)
+```
