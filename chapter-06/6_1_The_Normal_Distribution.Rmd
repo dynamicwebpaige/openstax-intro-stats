@@ -1,3 +1,131 @@
 ---
-title: "Chapter 6: The Normal Distribution"
+title: 'Chapter 6: The Normal Distribution'
 ---
+
+```{r echo = FALSE, results = 'asis', message = FALSE}
+# Load libraries
+library(aplpack)
+library(dplyr)
+library(tcltk)
+library(ggplot2)
+library(knitr)
+
+```
+
+## 2.4 The Standard Normal Distribution
+
+The **standard normal distribution** is a normal distribution of standardized values called z-scores. A **z-score** is measured in units of the **standard deviation**. For example, if the mean of a normal distribution is five and the standard deviation is two, the value 11 is three standard deviations above (or to the right of) the mean.
+
+### Z-Scores
+
+The **z-score** tells you how many standard deviations the value x is above (to the right of) or below (to the left of) the mean, ??. Values of x that are larger than the mean have positive z-scores, and values of x that are smaller than the mean have negative z-scores. If x equals the mean, then x has a z-score of zero.
+
+-----
+
+#### Try It: Z-Scores
+
+What is the z-score of x, when x = 1 and X ~ N(12,3)?
+
+```{r }
+
+z_score <- (1 - 12) / 3
+  
+```
+```{r, echo = FALSE }
+z_score
+```
+
+------
+
+#### Try It: Example #1
+
+The mean height of 15 to 18-year-old males from Chile from 2009 to 2010 was 170 cm with a standard deviation of 6.28 cm. Male heights are known to follow a normal distribution. Let X = the height of a 15 to 18-year-old male from Chile in 2009 to 2010. Then X ~ N(170, 6.28).
+
+a. Suppose a 15 to 18-year-old male from Chile was 168 cm tall from 2009 to 2010. The z-score when x = 168 cm is z = _______. This z-score tells you that x = 168 is ________ standard deviations to the ________ (right or left) of the mean _____ (What is the mean?).
+
+```{r }
+
+# z score = (sample - mean) / standard deviation
+z_score <- (168 - 170) / 6.28
+  
+```
+```{r, echo = FALSE }
+
+paste("The z-score would be:", z_score, ".", collapse = "")
+sd_dir <- if (z_score > 0) {"right"} else {"left"}
+paste("The z-score tells you that x is", abs(z_score), "standard deviations to the", sd_dir, "of the mean, 170.", collapse = "") 
+
+```
+
+b. Suppose that the height of a 15 to 18-year-old male from Chile from 2009 to 2010 has a z-score of z = 1.27. What is the male's height? The z-score (z = 1.27) tells you that the male's height is ________ standard deviations to the __________ (right or left) of the mean.
+
+```{r }
+
+# z score = (sample - mean) / standard deviation
+height <- (1.27 * 6.28) + 170
+  
+```
+```{r, echo = FALSE }
+paste("The male's height is:", as.character(height), "cm.", collapse = "")
+print("This height is 1.27 standard deviations to the right of the mean.") 
+
+```
+
+Suppose a 15 to 18-year-old male from Chile was 176 cm tall from 2009 to 2010. The z-score when x = 176 cm is z = _______. This z-score tells you that x = 176 cm is ________ standard deviations to the ________ (right or left) of the mean _____ (What is the mean?).
+
+```{r }
+
+# z score = (sample - mean) / standard deviation
+z_score <- (176 - 170) / 6.28
+  
+```
+```{r, echo = FALSE }
+
+paste("The z-score would be:", z_score, ".", collapse = "")
+sd_dir <- if (z_score > 0) {"right"} else {"left"}
+paste("The z-score tells you that x is", abs(z_score), "standard deviations to the", sd_dir, "of the mean, 170.", collapse = "") 
+
+```
+
+Suppose that the height of a 15 to 18-year-old male from Chile from 2009 to 2010 has a z-score of z = -2. What is the male's height? The z-score (z = -2) tells you that the male's height is ________ standard deviations to the __________ (right or left) of the mean.
+
+```{r }
+
+# z score = (sample - mean) / standard deviation
+height <- (-2 * 6.28) + 170
+  
+```
+```{r, echo = FALSE }
+paste("The male's height is:", as.character(height), "cm.", collapse = "")
+print("This height is 2 standard deviations to the left of the mean.") 
+
+```
+
+------
+
+####Try It: Example #2
+
+From 1984 to 1985, the mean height of 15 to 18-year-old males from Chile was 172.36 cm, and the standard deviation was 6.34 cm. Let Y = the height of 15 to 18-year-old males from 1984 to 1985. Then Y ~ N(172.36, 6.34).
+
+The mean height of 15 to 18-year-old males from Chile from 2009 to 2010 was 170 cm with a standard deviation of 6.28 cm. Male heights are known to follow a normal distribution. Let X = the height of a 15 to 18-year-old male from Chile in 2009 to 2010. Then X ~ N(170, 6.28).
+
+Find the z-scores for x = 160.58 cm and y = 162.85 cm. Interpret each z-score. What can you say about x = 160.58 cm and y = 162.85 cm?
+
+```{r }
+
+# z score = (sample - mean) / standard deviation
+z_score_1 <- (160.58 - 170) / 6.28
+z_score_2 <- (162.85 - 172.36) / 6.34
+  
+```
+```{r, echo = FALSE }
+
+paste("The z-score for 160.58 would be:", z_score_1, ".", collapse = "")
+paste("The z-score for 162.85 would be:", z_score_2, ".", collapse = "")
+
+```
+
+Both x = 160.58 and y = 162.85 deviate the same number of standard deviations from their respective means and in the same direction.
+
+------
+
