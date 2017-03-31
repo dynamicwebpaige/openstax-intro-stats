@@ -11,7 +11,7 @@ This repository will detail R code solutions for the 2017 edition of [OpenStax](
 * Experimental Design and Ethics
 * Data Collection Experiment
 * Sampling Experiment
-
+<br>
 
 2. **Descriptive Statistics**
 * [Stem-and-Leaf Graphs (Stemplots), Line Graphs, and Bar Graphs](http://paigevie.ws/2_1_Descriptive_Statistics.html)
@@ -22,7 +22,7 @@ This repository will detail R code solutions for the 2017 edition of [OpenStax](
 * Skewness and the Mean, Median, and Mode
 * Measures of the Spread of the Data
 * Descriptive Statistics
-
+<br>
 
 3. **Probability Topics**
 * Terminology
@@ -31,7 +31,7 @@ This repository will detail R code solutions for the 2017 edition of [OpenStax](
 * Contingency Tables
 * Tree and Venn Diagrams
 * Probability Topics
-
+<br>
 
 4. **Discrete Random Variables**
 * Probability Distribution Function (PDF) for a Discrete Random Variable
@@ -42,21 +42,21 @@ This repository will detail R code solutions for the 2017 edition of [OpenStax](
 * Poisson Distribution
 * Discrete Distribution (Playing Card Experiment)
 * Discrete Distribution (Lucky Dice Experiment)
-
+<br>
 
 5. **Continuous Random Variables**
 * Continuous Probability Functions
 * The Uniform Distribution
 * The Exponential Distribution
 * Continuous Distribution
-
+<br>
 
 6. **The Normal Distribution**
 * The Standard Normal Distribution
 * Using the Normal Distribution
 * Normal Distribution (Lap Times)
 * Normal Distribution (Pinkie Length)
-
+<br>
 
 7. **The Central Limit Theorem**
 * The Central Limit Theorem for Sample Means (Averages)
@@ -64,7 +64,7 @@ This repository will detail R code solutions for the 2017 edition of [OpenStax](
 * Using the Central Limit Theorem
 * Central Limit Theorem (Pocket Change)
 * Central Limit Theorem (Cookie Recipes)
-
+<br>
 
 8. **Confidence Intervals**
 * A Single Population Mean using the Normal Distribution
@@ -73,7 +73,7 @@ This repository will detail R code solutions for the 2017 edition of [OpenStax](
 * Confidence Interval (Home Costs)
 * Confidence Interval (Place of Birth)
 * Confidence Interval (Women's Heights)
-
+<br>
 
 9. **Hypothesis Testing with One Sample**
 * Null and Alternative Hypotheses
@@ -82,7 +82,7 @@ This repository will detail R code solutions for the 2017 edition of [OpenStax](
 * Rare Events, the Sample, Decision and Conclusion
 * Additional Information and Full Hypothesis Test Examples
 * Hypothesis Testing of a Single Mean and Single Proportion
-
+<br>
 
 10. **Hypothesis Testing with Two Samples**
 * Two Population Means with Unknown Standard Deviations
@@ -90,7 +90,7 @@ This repository will detail R code solutions for the 2017 edition of [OpenStax](
 * Comparing Two Independent Population Proportions
 * Matched or Paired Samples
 * Hypothesis Testing for Two Means and Two Proportions
-
+<br>
 
 11. **The Chi-Square Distribution**
 * Facts About the Chi-Square Distribution
@@ -101,7 +101,7 @@ This repository will detail R code solutions for the 2017 edition of [OpenStax](
 * Test of a Single Variance
 * Lab 1: Chi-Square Goodness-of-Fit
 * Lab 2: Chi-Square Test of Indepence
-
+<br>
 
 12. **Linear Regression and Correlation**
 * Linear Equations
@@ -113,7 +113,7 @@ This repository will detail R code solutions for the 2017 edition of [OpenStax](
 * Regression (Distance from School)
 * Regression (Textbook Cost)
 * Regression (Fuel Efficiency)
-
+<br>
 
 13. **F Distribution and One-Way ANOVA**
 * One-Way ANOVA
@@ -121,7 +121,7 @@ This repository will detail R code solutions for the 2017 edition of [OpenStax](
 * Facts About the F Distribution
 * Test of Two Variances
 * Lab: One-Way ANOVA
-
+<br>
 
 14. **Review Exercises**
 15. **Practice Tests (1-4) and Final Exams**
