@@ -176,6 +176,18 @@ z_score_2 &lt;- (162.85 - 172.36) / 6.34</code></pre>
 <p>Both x = 160.58 and y = 162.85 deviate the same number of standard deviations from their respective means and in the same direction.</p>
 <hr />
 </div>
+<div id="try-it-example-3" class="section level4">
+<h4>Try It: Example #3</h4>
+<p>In 2012, 1,664,479 students took the SAT exam. The distribution of scores in the verbal section of the SAT had a mean µ = 496 and a standard deviation = 114. Let X = a SAT exam verbal section score in 2012. Then X ~ N(496, 114).</p>
+<p>Find the z-scores for x1 = 325 and x2 = 366.21. Interpret each z-score. What can you say about x1 = 325 and x2 = 366.21?</p>
+<pre class="r"><code># z score = (sample - mean) / standard deviation
+z_score_x1 &lt;- (325 - 496) / 114
+z_score_x2 &lt;- (366.21 - 496) / 114</code></pre>
+<pre><code>## [1] &quot;The z-score for Student 1: -1.5 .&quot;</code></pre>
+<pre><code>## [1] &quot;The z-score for Student 2: -1.13850877192982 .&quot;</code></pre>
+<p>Student 2 scored closer to the mean than Student 1 and, since they both had negative z-scores, Student 2 had the better score.</p>
+<hr />
+</div>
 </div>
 </div>
 

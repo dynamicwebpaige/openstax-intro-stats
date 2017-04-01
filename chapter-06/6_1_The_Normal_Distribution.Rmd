@@ -129,3 +129,44 @@ Both x = 160.58 and y = 162.85 deviate the same number of standard deviations fr
 
 ------
 
+####Try It: Example #3
+
+In 2012, 1,664,479 students took the SAT exam. The distribution of scores in the verbal section of the SAT had a mean µ = 496 and a standard deviation = 114. Let X = a SAT exam verbal section score in 2012. Then X ~ N(496, 114).
+
+Find the z-scores for x1 = 325 and x2 = 366.21. Interpret each z-score. What can you say about x1 = 325 and x2 = 366.21?
+
+```{r }
+
+# z score = (sample - mean) / standard deviation
+z_score_x1 <- (325 - 496) / 114
+z_score_x2 <- (366.21 - 496) / 114
+  
+```
+```{r, echo = FALSE }
+
+paste("The z-score for Student 1:", z_score_x1, ".", collapse = "")
+paste("The z-score for Student 2:", z_score_x2, ".", collapse = "")
+
+```
+
+Student 2 scored closer to the mean than Student 1 and, since they both had negative z-scores, Student 2 had the better score.
+
+-----
+
+####Try It: Example #4
+
+Suppose X has a normal distribution with mean 25 and standard deviation five. Between what values of x do 68% of the values lie?
+
+```{r }
+
+# z score = (sample - mean) / standard deviation
+z_score_x1 <- (325 - 496) / 114
+z_score_x2 <- (366.21 - 496) / 114
+  
+```
+```{r, echo = FALSE }
+
+paste("The z-score for Student 1:", z_score_x1, ".", collapse = "")
+paste("The z-score for Student 2:", z_score_x2, ".", collapse = "")
+
+```
