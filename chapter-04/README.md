@@ -1,7 +1,7 @@
 ## Chapter 4: Discrete Random Variables
 
-> > “The laws of probability: so true in general, so fallacious in particular."
-> > > > > > > > > ― **Edward Gibbon**
+> > “The world is governed by chance. Randomness stalks us every day of our lives."
+> > > > > > > > > ― **Paul Aster**
 
 -----
 
