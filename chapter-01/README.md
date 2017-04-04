@@ -6,9 +6,9 @@
 
 -----
 
-Definitions of Statistics, Probability, and Key Terms
-Data, Sampling, and Variation in Data and Sampling
-Frequency, Frequency Tables, and Levels of Measurement
-Experimental Design and Ethics
-Data Collection Experiment
-Sampling Experiment
+* Definitions of Statistics, Probability, and Key Terms
+* Data, Sampling, and Variation in Data and Sampling
+* Frequency, Frequency Tables, and Levels of Measurement
+* Experimental Design and Ethics
+* Data Collection Experiment
+* Sampling Experiment
