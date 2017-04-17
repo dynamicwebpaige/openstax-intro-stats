@@ -1,5 +1,9 @@
 # Confidence Intervals
 
+> "All you need in this life is ignorance and confidence, and then success is sure."
+
+>>>>> **Mark Twain**
+
 -----
 
 * A Single Population Mean using the Normal Distribution
